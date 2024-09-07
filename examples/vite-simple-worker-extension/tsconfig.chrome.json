@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"types": ["chrome", "serviceworker"]
+	},
+	"lib": ["esnext", "webworker"],
+	"dependencies": {
+		"@typescript/lib-dom": "npm:@orta/type-noops"
+	},
+	"extends": "./tsconfig.json",
+	"include": ["src/**/*.chrome.ts"]
+}

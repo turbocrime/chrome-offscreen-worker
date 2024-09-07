@@ -1,0 +1,11 @@
+{
+	"name": "Simple Web Worker",
+	"version": "1.0",
+	"description": "Launches a simple web worker.",
+	"manifest_version": 3,
+	"background": {
+		"service_worker": "background.chrome.ts",
+		"type": "module"
+	},
+	"permissions": ["offscreen"]
+}

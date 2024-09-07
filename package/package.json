@@ -1,0 +1,49 @@
+{
+	"name": "@turbocrime/chrome-offscreen-worker",
+	"version": "1.0.0",
+	"description": "Polyfill of the Web Worker API for the Chrome extension runtime.",
+	"keywords": [
+		"chrome",
+		"extension",
+		"manifestv3",
+		"offscreen",
+		"polyfill",
+		"ponyfill",
+		"web-ext",
+		"webworker",
+		"worker"
+	],
+	"homepage": "https://github.com/turbocrime/chrome-offscreen-worker",
+	"license": "(MIT OR Apache-2.0)",
+	"author": "turbocrime",
+	"type": "module",
+	"files": ["dist", "!test/**", "!**/*.tsbuildinfo", "offscreen.html"],
+	"exports": {
+		".": "./src/index.ts",
+		"./offscreen": "./src/offscreen.ts",
+		"./worker": "./src/worker.ts"
+	},
+	"scripts": {
+		"build": "tsc --build --verbose",
+		"clean": "rm -rfv dist *.tsbuildinfo ./package ./turbocrime-chrome-offscreen-worker-*.tgz",
+		"format": "biome format --write",
+		"lint": "biome lint",
+		"test": "vitest"
+	},
+	"publishConfig": {
+		"exports": {
+			".": {
+				"default": "./dist/index.js",
+				"types": "./dist/index.d.ts"
+			},
+			"./offscreen": {
+				"default": "./dist/offscreen.js",
+				"types": "./dist/offscreen.d.ts"
+			},
+			"./worker": {
+				"default": "./dist/worker.js",
+				"types": "./dist/worker.d.ts"
+			}
+		}
+	}
+}
